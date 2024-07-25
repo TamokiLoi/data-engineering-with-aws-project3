@@ -25,7 +25,7 @@ Join_node1721880456720 = Join.apply(frame1=AccelerometerLanding_node172188032885
 SelectFields_node1721880487396 = SelectFields.apply(frame=Join_node1721880456720, paths=["user", "timestamp", "x", "y", "z"], transformation_ctx="SelectFields_node1721880487396")
 
 # Script generated for node Accelerometer Trusted
-AccelerometerTrusted_node1721880543261 = glueContext.getSink(path="s3://loinlt1/accelerometer_trusted/", connection_type="s3", updateBehavior="LOG", partitionKeys=[], enableUpdateCatalog=True, transformation_ctx="AccelerometerTrusted_node1721880543261")
+AccelerometerTrusted_node1721880543261 = glueContext.getSink(path="s3://loinlt1/accelerometer_trusted/", connection_type="s3", updateBehavior="UPDATE_IN_DATABASE", partitionKeys=[], enableUpdateCatalog=True, transformation_ctx="AccelerometerTrusted_node1721880543261")
 AccelerometerTrusted_node1721880543261.setCatalogInfo(catalogDatabase="database-1",catalogTableName="accelerometer_trusted")
 AccelerometerTrusted_node1721880543261.setFormat("json")
 AccelerometerTrusted_node1721880543261.writeFrame(SelectFields_node1721880487396)

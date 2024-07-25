@@ -30,12 +30,11 @@ SELECT *
 FROM myDataSource 
 WHERE sharewithresearchasofdate IS NOT NULL 
 AND sharewithresearchasofdate <> 0
-
 '''
 SQLQuery_node1721879402029 = sparkSqlQuery(glueContext, query = SqlQuery0, mapping = {"myDataSource":ChangeSchema_node1721878566434}, transformation_ctx = "SQLQuery_node1721879402029")
 
 # Script generated for node Customer Trusted
-CustomerTrusted_node1721879522021 = glueContext.getSink(path="s3://loinlt1/customer_trusted/", connection_type="s3", updateBehavior="LOG", partitionKeys=[], enableUpdateCatalog=True, transformation_ctx="CustomerTrusted_node1721879522021")
+CustomerTrusted_node1721879522021 = glueContext.getSink(path="s3://loinlt1/customer_trusted/", connection_type="s3", updateBehavior="UPDATE_IN_DATABASE", partitionKeys=[], enableUpdateCatalog=True, transformation_ctx="CustomerTrusted_node1721879522021")
 CustomerTrusted_node1721879522021.setCatalogInfo(catalogDatabase="database-1",catalogTableName="customer_trusted")
 CustomerTrusted_node1721879522021.setFormat("json")
 CustomerTrusted_node1721879522021.writeFrame(SQLQuery_node1721879402029)

@@ -30,7 +30,7 @@ SelectFields_node1721881467860 = SelectFields.apply(frame=Join_node1721881422430
 DropDuplicates_node1721881880024 =  DynamicFrame.fromDF(SelectFields_node1721881467860.toDF().dropDuplicates(["email"]), glueContext, "DropDuplicates_node1721881880024")
 
 # Script generated for node Customer Curated
-CustomerCurated_node1721881501833 = glueContext.getSink(path="s3://loinlt1/customers_curated/", connection_type="s3", updateBehavior="LOG", partitionKeys=[], enableUpdateCatalog=True, transformation_ctx="CustomerCurated_node1721881501833")
+CustomerCurated_node1721881501833 = glueContext.getSink(path="s3://loinlt1/customers_curated/", connection_type="s3", updateBehavior="UPDATE_IN_DATABASE", partitionKeys=[], enableUpdateCatalog=True, transformation_ctx="CustomerCurated_node1721881501833")
 CustomerCurated_node1721881501833.setCatalogInfo(catalogDatabase="database-1",catalogTableName="customers_curated")
 CustomerCurated_node1721881501833.setFormat("json")
 CustomerCurated_node1721881501833.writeFrame(DropDuplicates_node1721881880024)
