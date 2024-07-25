@@ -1,4 +1,4 @@
-CREATE EXTERNAL TABLE IF NOT EXISTS `stedi`.`customer_landing` (
+CREATE EXTERNAL TABLE IF NOT EXISTS `database-1`.`customer_landing` (
   `serialnumber` string,
   `sharewithpublicasofdate` bigint,
   `birthday` string,
@@ -18,5 +18,5 @@ WITH SERDEPROPERTIES (
   'mapping' = 'TRUE'
 )
 STORED AS INPUTFORMAT 'org.apache.hadoop.mapred.TextInputFormat' OUTPUTFORMAT 'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat'
-LOCATION 's3://stedi-s3/customer/'
+LOCATION 's3://loinlt1/customer/'
 TBLPROPERTIES ('classification' = 'json');
