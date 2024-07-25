@@ -1,0 +1,1 @@
+Read by link: https://github.com/udacity/nd027-Data-Engineering-Data-Lakes-AWS-Exercises/blob/main/project/README.md
